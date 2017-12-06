@@ -12,7 +12,9 @@
 注意：如果最后提示uefi secure boot enable的话，重启电脑，进入bios，关闭scure boot即可。  
 
 3. 添加环境变量  
-`export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}`  
+`export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+sudo ln -s /usr/lib/nvidia-346/libnvcuvid.so /usr/lib/libnvcuvid.so
+sudo ln -s /usr/lib/nvidia-346/libnvcuvid.so.1 /usr/lib/libnvcuvid.so.1`  
 此处安装时要根据自己的cuda版本来，最好是自己手打，不要复制粘贴，容易添加环境变量出错。  
 
 4. 编译cuda samples  
