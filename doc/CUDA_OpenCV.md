@@ -41,11 +41,15 @@ make -j8  //建议多线程编译.单线程超慢
 sudo make install
 ```
 如果make -j8的时候报错：   
+```
 _compile_generated_gpu_mat.cu.obj  
 nvcc fatal : Unsupported gpu architecture 'compute_11'  
+```
 cmake的时候可以添加:  
+```
 -D CUDA_ARCH_BIN="5.0"  
-这个可以在运行./deviceQuery里面看到
+```
+这个可以在运行./deviceQuery里面看到  
 6. 使得动态链接生效
 ```$xslt
 sudo vim /etc/ld.so.conf
