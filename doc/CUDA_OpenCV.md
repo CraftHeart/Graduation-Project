@@ -72,3 +72,14 @@ pkg-config --cflags --libs opencv
 ```$xslt
 pkg-config --modversion opencv
 ```
+
+如果在编译代码时报错：
+```
+  Could NOT find CUDA: Found unsuitable version "7.5", but required is exact
+  version "8.0" (found /usr/local/cuda)
+```
+可以进入到以下目录:  
+```
+/usr/local/share/OpenCV/OpenCVConfig.cmake:105  
+```
+然后修改了 8 为7.5 ，即修改了opencv 的配置文件使其为8.0版本，然后opencv就完美运行.
